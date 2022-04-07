@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from app_biblioteca.models import Livro
@@ -30,3 +30,7 @@ class DeleteLivroView(DeleteView):
     template_name = 'livro_del.html'
     queryset = Livro.objects.all()
     success_url = reverse_lazy('index')
+    
+    class DetailLivroView(DetailView):
+    template_name = 'livro_detail.html'
+    queryset = Livro.objects.all()
