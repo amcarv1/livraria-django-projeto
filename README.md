@@ -8,6 +8,7 @@
 <h2>🏁 Tópicos</h2>
 
 <!--ts-->
+   * [Tecnologias Usadas](#req) 🚀
    * [Criando o Projeto e a Aplicação](#CPA) 🔨 
    * [Configurando o Arquivo settings.py](#CAS) 👷
    * [Preparando o Banco de Dados](#BD) 🎲 
@@ -20,6 +21,14 @@
    * [Criando as Rotas](#CR) ↩️ 
    * [Criando o Template do Projeto](#CTP) ™️ 
 <!--te-->
+<hr>
+<h2 id="req"> 🚀 Tecnologias Usadas</h2>
+- ✅ Python <br>
+- ✅ Django Framework<br>
+- ✅ PostgreSQL <br>
+- ✅ HTML <br>
+- ✅ Bootstrap <br>
+- ✅ Visual Studio Code <br>
 
 <hr>
 
