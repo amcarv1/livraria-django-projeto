@@ -38,7 +38,7 @@ django-admin startproject projeto_biblioteca .
 ```bash
 django-admin startapp app_biblioteca
 ```
-
+<hr>
 <h2 id="CAS">👷 Configurando o Arquivo settings.py</h2>
 
 <p>1️⃣ Importe o módulo 'os' logo no início do arquivo <code>settings.py</code></p>
@@ -94,6 +94,8 @@ LANGUAGE_CODE = 'pt-br'
 ```python
 TIME_ZONE = 'America/Sao_Paulo'
 ```
+   
+<hr>
 
 <h2 id="BD">🎲 Preparando o Banco de Dados</h2>
 
@@ -111,7 +113,7 @@ DATABASES = {
     }
 }
 ```
-
+<hr>
 <h2 id="CM">💢 Criando o Modelo</h2>
 
 <p>1️⃣ No arquivo <code>models.py</code> da aplicação, digite os seguintes códigos:</p>
@@ -136,7 +138,7 @@ class Livro(models.Model):
     def __str__(self):
         return self.nome
 ```
-
+<hr>
 <h2 id="RMAD">📝 Registrando o Modelo na Administração do Django</h2>
 
 <p>1️⃣ No arquivo <code>admin.py</code> da aplicação, digite os seguintes códigos:</p>
@@ -150,7 +152,7 @@ from app_biblioteca.models import Livro
 class LivroAdmin(admin.ModelAdmin):
     list_display = ('nome', 'autor', 'editora', 'edicao', 'ano_publicacao', 'estoque', 'disponivel')
 ```
-
+<hr>
 <h2 id="FMBD">✅ Fazendo as Migrações do Banco de Dados</h2>
 
 <p>📣 No terminal/cmd, navegue até o diretório do arquivo e</p>
@@ -167,6 +169,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+<hr>
 <h2 id="CSUAD">🔑 Criando o Super Usuário para Administração do Django</h2>
 
 <p>📣 No terminal/cmd, navegue até o diretório do arquivo e</p>
@@ -176,7 +179,7 @@ python manage.py migrate
 ```bash
 python manage.py createsuperuser
 ```
-
+<hr>
 <h2 id="CFM">📝 Criando o Formulário do Modelo</h2>
 
 <p>1️⃣ Crie um arquivo chamado <code>forms.py</code> no diretório da aplicação</p>
@@ -193,7 +196,7 @@ class LivroModelForm(forms.ModelForm):
         model = Livro
         fields = '__all__'
 ```
-
+<hr>
 <h2 id="CV">🎯 Criando as Views</h2>
 
 <p>1️⃣ No arquivo <code>views.py</code> da aplicação digite os seguintes códigos</p>
@@ -232,8 +235,8 @@ class DeleteLivroView(DeleteView):
     queryset = Livro.objects.all()
     success_url = reverse_lazy('index')
 ```
-
-<h2 id="CD">↩️ Criando as Rotas</h2>
+<hr>
+<h2 id="CR">↩️ Criando as Rotas</h2>
 
 <p>1️⃣ No arquivo <code>urls.py</code> do projeto faça as seguintes configurações:</p>
 
@@ -260,7 +263,7 @@ urlpatterns = [
     path('<int:pk>/delete/', DeleteLivroView.as_view(), name='delete_livro'),
 ]
 ```
-
+<hr>
 <h2 id="CTP">™️ Criando o Template do Projeto ™️</h2>
 
 <p>1️⃣ Crie um diretório chamado <code>templates</code> no diretório da aplicação</p>
