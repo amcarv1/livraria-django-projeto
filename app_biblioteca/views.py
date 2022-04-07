@@ -31,6 +31,6 @@ class DeleteLivroView(DeleteView):
     queryset = Livro.objects.all()
     success_url = reverse_lazy('index')
     
-    class DetailLivroView(DetailView):
+class DetailLivroView(DetailView):
     template_name = 'livro_detail.html'
     queryset = Livro.objects.all()
