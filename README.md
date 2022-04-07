@@ -373,7 +373,7 @@ urlpatterns = [
 {% block content %}
     <form method="POST">
         {% csrf_token %}
-        <p>Deja realmente deletar o livro {{ object }} ?</p>
+        <p>Deseja realmente deletar o livro {{ object }} ?</p>
         {% buttons %}
             <button type="submit" class="btn btn-danger">Confirmar</button>
             <button type="button" class="btn btn-warning">
