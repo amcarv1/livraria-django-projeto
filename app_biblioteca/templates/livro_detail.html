@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="row">
+    <h1>Livros</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Autor</th>
+                <th>Editora</th>
+                <th>Edição</th>
+                <th>Ano da Publicação</th>
+                <th>Estoque</th>
+                <th>Disponível</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{ livro.id }}</td>
+                    <td>{{ livro.nome }}</td>
+                    <td>{{ livro.autor }}</td>
+                    <td>{{ livro.editora }}</td>
+                    <td>{{ livro.edicao }}</td>
+                    <td>{{ livro.ano_publicacao }}</td>
+                    <td>{{ livro.estoque }}</td>
+                    <td>{{ livro.disponivel }}</td>
+        </tbody>
+    </table>
+</div>
+
+<div class="new">
+    <a class="btn btn-warning" href="{% url 'index' %}" style="background-color: green; color: white; border-color: green;">Voltar</a>
+</div>
+{% endblock %}
