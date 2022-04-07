@@ -1,7 +1,7 @@
 <h1 align="center">Documentação 📄</h1>
 
 <p align="center">
-<p align="center">Projeto simples de uma biblioteca feito utilizando Django e os comandos CRUD.</p>
+<p align="center">📚 Projeto simples de uma biblioteca feito utilizando o framework Django 📚.</p>
 
 <hr>
 
