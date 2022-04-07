@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <h1>Livros</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Autor</th>
+                    <th>Editora</th>
+                    <th>Edição</th>
+                    <th>Ano da Publicação</th>
+                    <th>Estoque</th>
+                    <th>Disponível</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livro in livros %}
+                    <tr>
+                        <td>{{ livro.id }}</td>
+                        <td>{{ livro.nome }}</td>
+                        <td>{{ livro.autor }}</td>
+                        <td>{{ livro.editora }}</td>
+                        <td>{{ livro.edicao }}</td>
+                        <td>{{ livro.ano_publicacao }}</td>
+                        <td>{{ livro.estoque }}</td>
+                        <td>{{ livro.disponivel }}</td>
+                        <td>
+                            <a class="btn btn-warning" href="{% url 'update_livro' livro.id %}">Editar</a>
+                            <a class="btn btn-danger" href="{% url 'delete_livro' livro.id %}">Deletar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="new">
+        <a class="btn btn-warning" href="{% url 'create_livro' %}" style="background-color: green; color: white; border-color: green;">Novo</a>
+    </div>
+{% endblock %}
