@@ -212,7 +212,7 @@ class LivroModelForm(forms.ModelForm):
 
 ```python
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from app_biblioteca.models import Livro
@@ -267,7 +267,7 @@ urlpatterns = [
 
 ```python
 from django.urls import path 
-from app_biblioteca.views import IndexView, CreateLivroView, UpdateLivroView, DeleteLivroView
+from app_biblioteca.views import IndexView, CreateLivroView, UpdateLivroView, DeleteLivroView, DetailLivroView
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
