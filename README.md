@@ -4,6 +4,9 @@
 <p align="center">📚 Projeto simples de uma biblioteca feito utilizando o framework Django 📚.</p>
 
 <hr>
+<p align='center'>
+  <img src="https://user-images.githubusercontent.com/84135240/162264506-b6a0b116-10bf-4d6d-be79-845539efb573.gif"=/>
+</p>
 
 <h2>🏁 Tópicos</h2>
 
