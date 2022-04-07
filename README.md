@@ -243,6 +243,10 @@ class DeleteLivroView(DeleteView):
     template_name = 'livro_del.html'
     queryset = Livro.objects.all()
     success_url = reverse_lazy('index')
+    
+class DetailLivroView(DetailView):
+    template_name = 'livro_detail.html'
+    queryset = Livro.objects.all()
 ```
 <hr>
 <h2 id="CR">↩️ Criando as Rotas</h2>
@@ -270,6 +274,7 @@ urlpatterns = [
     path('create/', CreateLivroView.as_view(), name='create_livro'),
     path('<int:pk>/update/', UpdateLivroView.as_view(), name='update_livro'),
     path('<int:pk>/delete/', DeleteLivroView.as_view(), name='delete_livro'),
+    path('<int:pk>/detail/', DetailLivroView.as_view(), name='detail_livro'),
 ]
 ```
 <hr>
@@ -345,7 +350,7 @@ urlpatterns = [
 {% endblock %}
 ```
 
-<p>4️⃣ Crie um arquivo chamado <code>livro_form.html</code> no diretório templates e digite os seguintes códigos</p>
+<p>4️⃣ Crie um arquivo chamado <code>livro_form.html</code> no diretório templates e digite os seguintes códigos:</p>
 
 ```html
 {% extends 'base.html' %}
@@ -365,7 +370,7 @@ urlpatterns = [
 {% endblock %}
 ```
 
-<p>5️⃣ Crie um arquivo chamado <code>livro_del.html</code> no diretório templates e digite os seguintes códigos</p>
+<p>5️⃣ Crie um arquivo chamado <code>livro_del.html</code> no diretório templates e digite os seguintes códigos:</p>
 
 ```html
 {% extends 'base.html' %}
@@ -381,5 +386,46 @@ urlpatterns = [
             </button>
         {% endbuttons %}
     </form>
+{% endblock %}
+```
+
+<p>6️⃣ Crie um arquivo chamado <code>livro_detail.html</code> no diretório templates e digite os seguintes códigos:</p>
+
+```html
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="row">
+    <h1>Livros</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Autor</th>
+                <th>Editora</th>
+                <th>Edição</th>
+                <th>Ano da Publicação</th>
+                <th>Estoque</th>
+                <th>Disponível</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{ livro.id }}</td>
+                    <td>{{ livro.nome }}</td>
+                    <td>{{ livro.autor }}</td>
+                    <td>{{ livro.editora }}</td>
+                    <td>{{ livro.edicao }}</td>
+                    <td>{{ livro.ano_publicacao }}</td>
+                    <td>{{ livro.estoque }}</td>
+                    <td>{{ livro.disponivel }}</td>
+        </tbody>
+    </table>
+</div>
+
+<div class="new">
+    <a class="btn btn-warning" href="{% url 'index' %}" style="background-color: green; color: white; border-color: green;">Voltar</a>
+</div>
 {% endblock %}
 ```
