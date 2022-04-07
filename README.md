@@ -335,6 +335,7 @@ urlpatterns = [
                         <td>{{ livro.estoque }}</td>
                         <td>{{ livro.disponivel }}</td>
                         <td>
+                            <a class="btn btn-warning" href="{% url 'detail_livro' livro.id %}" style="background-color: blue; color: white; border-color: blue;" >Detalhes</a>
                             <a class="btn btn-warning" href="{% url 'update_livro' livro.id %}">Editar</a>
                             <a class="btn btn-danger" href="{% url 'delete_livro' livro.id %}">Deletar</a>
                         </td>
@@ -343,7 +344,7 @@ urlpatterns = [
             </tbody>
         </table>
     </div>
-    
+
     <div class="new">
         <a class="btn btn-warning" href="{% url 'create_livro' %}" style="background-color: green; color: white; border-color: green;">Novo</a>
     </div>
